@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Photography Company</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .blog-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .blog-post {
+            flex-basis: calc(50% - 20px);
+            margin-bottom: 20px;
+        }
+
+        .blog-post img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+</head>
+<body class="blog-page">
+    <header>
+        <h1 style="color: #f5f2e3; margin-bottom: 20px;">Welcome to Photography Company</h1>
+        <h2 style="color: #8b966d; margin: 0; padding: 0; position: absolute; top: 10px; left: 10px;">Blog</h2>
+    </header>
+
+    <nav class="top-navbar">
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Photography Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="order.html">Order Pictures</a></li>
+            <li><a href="products.html">Products & Prices</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="socials.html">Our Socials</a></li>
+        </ul>
+    </nav>
+
+    <section class="blog-section">
+        <div class="blog-post">
+            <img src="blogs/outfits.jpg" alt="Blog Post 1" width="400">
+            <h3>How To Choose BOLD Outfits For Photography Sessions</h3>
+            <p>LWhether you're planning a dramatic fashion shoot, a creative portrait session, or just want to stand out in your family photos, choosing bold outfits can take your photos to a whole new level. In this blog post, we'll explore the art of selecting and styling bold outfits that not only complement your personality but also add a captivating element to your photographs. </p>
+            <a href="#">How To Choose...</a>
+        </div>
+        <div class="blog-post">
+            <img src="blogs/style.jpg" alt="Blog Post 2" width="400">
+            <h3>When Do You Know You've Chosen The Right Photographer?</h3>
+            <p>In a world filled with countless photographers offering their services, selecting the right one for your special moments can be a challenging task. So, how do you know when you've made the right choice? In this blog post, we'll unravel the key indicators that tell you when you've found the photographer who can transform your visions into timeless photographs.</p>
+            <a href="#">When Do You Know...</a>
+        </div>
+        <div class="blog-post">
+            <img src="blogs/frame.jpg" alt="Blog Post 3" width="400">
+            <h3>What Frames Look The Best For My Photos?!?</h3>
+            <p>They say a picture is worth a thousand words, but what about the frame that cradles that precious image? Choosing the right frame can elevate your photographs from beautiful to breathtaking. In this blog post, we embark on a journey to discover the art of frame selection.</p>
+            <a href="#">What Frames Look...</a>
+        </div>
+        <div class="blog-post">
+            <img src="blogs/pose.jpg" alt="Blog Post 4" width="400">
+            <h3>Choosing Flattering Poses</h3>
+            <p>Whether you're a professional model, an aspiring influencer, or simply someone who loves being in front of the camera, understanding how to strike the right pose is an invaluable skill. In this blog post, we'll delve into the fascinating world of posing, uncovering tips and techniques that will help you put your best foot forward in front of the lens.</p>
+            <a href="#">Choosing Flattering...</a>
+        </div>
+    </section>
+
+    <div id="chatbot-container">
+        <div id="chatbot">
+            <div id="chatbot-header">
+                <h3>Chatbot</h3>
+                <button id="close-chatbot">Close</button>
+            </div>
+            <div id="chatbot-messages">
+                <p>Welcome! How can I assist you today?</p>
+            </div>
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <nav class="bottom-navbar">
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Photography Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="order.html">Order Pictures</a></li>
+            <li><a href="products.html">Products & Prices</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const chatbotContainer = document.getElementById("chatbot-container");
+            const chatbot = document.getElementById("chatbot");
+            const closeChatbot = document.getElementById("close-chatbot");
+            const chatbotMessages = document.getElementById("chatbot-messages");
+            const userInput = document.getElementById("user-input");
+            const sendButton = document.getElementById("send-button");
+
+            closeChatbot.addEventListener("click", function () {
+                chatbotContainer.style.display = "none";
+            });
+
+            sendButton.addEventListener("click", function () {
+                const userMessage = userInput.value;
+                if (userMessage.trim() === "") return;
+
+                const userMessageElement = document.createElement("p");
+                userMessageElement.textContent = userMessage;
+                chatbotMessages.appendChild(userMessageElement);
+
+                const botResponse = document.createElement("p");
+                botResponse.textContent = "I'm just a basic chatbot. I can't provide real answers.";
+                chatbotMessages.appendChild(botResponse);
+
+                userInput.value = "";
+
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            });
+        });
+    </script>
+
+</body>
+</html>
